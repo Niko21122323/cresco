@@ -16,7 +16,7 @@ const PrimaryButton = ({
       className={`relative flex items-center w-full p-1.5 rounded-full overflow-hidden group ${theme === "dark" ? "bg-dark" : "bg-background"}`}
     >
       <span
-        className={`relative w-full whitespace-nowrap pl-5 pr-6 z-10 ${theme === "dark" ? "text-background" : "text-dark"}`}
+        className={`relative w-full whitespace-nowrap pl-5 pr-6 text-center z-10 ${theme === "dark" ? "text-background" : "text-dark"}`}
       >
         {title}
       </span>
