@@ -1,19 +1,20 @@
 import Image from "next/image";
 import heroImage from "../../public/photos/home/hero-image.jpg";
 import heroMiniImage from "../../public/photos/home/hero-mini-image.jpg";
+import PrimaryButton from "../buttons/PrimaryButton";
 
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden" id="hero">
       <div className="relative container mx-auto px-6 z-20">
         <div className="flex flex-col justify-end">
-          <div className="flex flex-col justify-between min-h-screen pb-16 pt-64 gap-36">
-            <div className="flex items-start justify-between gap-24">
+          <div className="flex flex-col-reverse lg:flex-col lg:justify-between min-h-screen pb-16 pt-44 lg:pt-64 gap-8 lg:gap-36">
+            <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-24">
               <p className="text-background/80 text-lg max-w-[460px]">
                 AI-driven tracking meets real-time coaching, giving you the
                 clarity and guidance you need to improve every session.
               </p>
-              <div className="max-w-[225px]">
+              <div className="max-w-[225px] max-lg:hidden">
                 <p className="text-background/80 text-lg max-w-[460px] pb-6">
                   Breakthrough growth built on insight.
                 </p>
@@ -25,8 +26,15 @@ const HeroSection = () => {
                   className="w-full h-auto object-cover"
                 />
               </div>
+              <div className="block lg:hidden">
+                <PrimaryButton
+                  title="Join the waitlist"
+                  url="/"
+                  theme="light"
+                />
+              </div>
             </div>
-            <h1 className="text-background text-9xl">
+            <h1 className="text-background max-[355px]:text-4xl max-[510px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
               Train Smarter <br /> with AI Precision
             </h1>
           </div>

@@ -53,19 +53,19 @@ const Navbar = () => {
         duration: 0.25,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className={`fixed top-0 left-0 w-full z-50 py-8 transition-colors duration-300 ${navClasses}`}
+      className={`fixed overflow-x-clip top-0 left-0 w-full z-50 py-8 transition-colors duration-300 ${navClasses}`}
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between gap-10">
           <div className="flex items-center">
             <h5
-              className={`text-2xl uppercase font-bold pr-12 transition-colors duration-300 ${textClass}`}
+              className={`text-2xl uppercase font-bold lg:pr-8 xl:pr-12 transition-colors duration-300 ${textClass}`}
             >
               Cresco
             </h5>
 
             <div
-              className={`flex items-center gap-12 pl-12 border-l transition-colors duration-300 ${borderLinkClass}`}
+              className={`flex items-center gap-8 xl:gap-12 lg:pl-8 xl:pl-12 border-l transition-colors duration-300 max-lg:hidden ${borderLinkClass}`}
             >
               {navLinks.map((link) => (
                 <Link
@@ -79,13 +79,16 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div>
+          <div className="hidden lg:block">
             <PrimaryButton
               title="Join the waitlist"
               url="/"
               theme={isSticky ? "dark" : "light"}
             />
           </div>
+          <button type="button" className="text-white block lg:hidden">
+            Menu
+          </button>
         </div>
       </div>
     </motion.nav>
