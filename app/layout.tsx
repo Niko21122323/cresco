@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Mona_Sans, TikTok_Sans } from "next/font/google";
+
 import "./globals.css";
+import "swiper/css";
+
 import Navbar from "@/components/Navbar";
 
 const monaSans = Mona_Sans({

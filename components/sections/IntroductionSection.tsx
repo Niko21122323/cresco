@@ -44,7 +44,7 @@ const coreFeatures = [
 
 const IntroductionSection = () => {
   return (
-    <section className="pb-56">
+    <section className="">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center justify-center gap-6 pb-16 lg:pb-20 xl:pb-28">
           <span className="text-sm sm:text-base text-dark/60">
