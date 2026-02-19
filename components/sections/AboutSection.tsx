@@ -70,7 +70,7 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-      <div className="aspect-video block lg:hidden">
+      <div className="aspect-square sm:aspect-video block lg:hidden">
         <Image
           src={aboutImage}
           alt="about image"
