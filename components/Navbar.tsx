@@ -2,12 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import {
-  motion,
-  useScroll,
-  useMotionValueEvent,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import PrimaryButton from "./buttons/PrimaryButton";
 
 import { FaInstagram } from "react-icons/fa6";
@@ -28,9 +23,6 @@ const socialLinks = [
 ];
 
 const Navbar = () => {
-  const { scrollY } = useScroll();
-  const [isHidden, setIsHidden] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -44,98 +36,54 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() ?? 0;
-    if (isOpen) return;
-
-    if (latest <= 0) {
-      setIsHidden(false);
-      setIsSticky(false);
-      return;
-    }
-
-    if (latest > previous) {
-      setIsHidden(true);
-    } else {
-      setIsHidden(false);
-      setIsSticky(true);
-    }
-  });
-
-  const navClasses =
-    isSticky || isOpen
-      ? "bg-white border-b border-border"
-      : "bg-transparent border-b border-border/15";
-
-  const textClass = isSticky || isOpen ? "text-black" : "text-white";
-  const linkClass = isSticky || isOpen ? "text-black/90" : "text-white/90";
-  const borderLinkClass = isSticky || isOpen ? "border-black" : "border-white";
-  const iconColor = isSticky || isOpen ? "#000" : "#fff";
-
   return (
     <>
-      <motion.nav
-        variants={{
-          visible: { y: 0 },
-          hidden: { y: "-100%" },
-        }}
-        animate={isHidden ? "hidden" : "visible"}
-        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 w-full z-[60] py-6 transition-colors duration-300 ${navClasses}`}
+      <nav
+        className={`absolute top-0 left-0 w-full z-50 py-8 border-b border-border/10  transition-colors duration-300 ${isOpen && "bg-background"}`}
       >
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between gap-10">
             <div className="flex items-center">
               <h5
-                className={`text-2xl uppercase font-bold lg:pr-8 xl:pr-12 transition-colors duration-300 ${textClass}`}
+                className={`text-2xl uppercase font-bold lg:pr-8 xl:pr-12 transition-colors duration-300 text-background ${isOpen ? "text-dark" : "text-background"}`}
               >
                 Cresco
               </h5>
-
-              {/* Desktop Links Restored */}
               <div
-                className={`flex items-center gap-8 xl:gap-12 lg:pl-8 xl:pl-12 border-l transition-colors duration-300 max-lg:hidden ${borderLinkClass}`}
+                className={`flex items-center gap-8 xl:gap-12 lg:pl-8 xl:pl-12 border-l transition-colors duration-300 max-lg:hidden border-background`}
               >
                 {navLinks.map((link) => (
                   <Link
                     key={link.id}
                     href={link.link}
-                    className={`text-lg leading-none transition-colors duration-300 ${linkClass}`}
+                    className={`text-lg leading-none transition-colors duration-300 text-background/80`}
                   >
                     {link.label}
                   </Link>
                 ))}
               </div>
             </div>
-
             <div className="hidden lg:block">
-              <PrimaryButton
-                title="Join the waitlist"
-                url="/"
-                theme={isSticky || isOpen ? "dark" : "light"}
-              />
+              <PrimaryButton title="Join the waitlist" url="/" theme="light" />
             </div>
-
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="relative z-[70] flex flex-col items-center justify-center w-10 h-10 gap-1.5 lg:hidden"
+              className="relative z-50 flex flex-col items-center justify-center w-10 h-10 gap-1.5 lg:hidden"
               aria-label="Toggle Menu"
             >
               <motion.span
                 animate={isOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
-                className="w-8 h-0.5"
-                style={{ backgroundColor: iconColor }}
+                className={`w-8 h-0.5 ${isOpen ? "bg-dark" : "bg-background"}`}
               />
               <motion.span
                 animate={isOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
-                className="w-8 h-0.5"
-                style={{ backgroundColor: iconColor }}
+                className={`w-8 h-0.5 ${isOpen ? "bg-dark" : "bg-background"}`}
               />
             </button>
           </div>
         </div>
-      </motion.nav>
+      </nav>
 
       <AnimatePresence>
         {isOpen && (
@@ -144,17 +92,17 @@ const Navbar = () => {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed top-0 left-0 w-full max-h-screen overflow-y-auto bg-white border-b border-border z-50 flex flex-col py-10 pt-32 pb-10 shadow-2xl"
+            className="fixed top-0 left-0 w-full max-h-screen overflow-y-auto bg-background border-b border-border z-40 flex flex-col pt-32 pb-10"
           >
             <div className="container mx-auto px-6">
               <div className="flex max-[500px]:flex-col items-start justify-between gap-16">
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-6 max-[500px]:w-full">
                   {navLinks.map((link) => (
                     <Link
                       key={link.id}
                       href={link.link}
                       onClick={() => setIsOpen(false)}
-                      className="text-lg text-black hover:text-gray-600 transition-colors"
+                      className="text-2xl text-dark transition-colors max-[500px]:border-b border-border/50 max-[500px]:pb-6 last:border-none"
                     >
                       {link.label}
                     </Link>
@@ -191,7 +139,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsOpen(false)}
-            className="fixed inset-0 bg-black/50 z-40 backdrop-blur-sm"
+            className="fixed inset-0 bg-dark/50 z-30 backdrop-blur-sm"
           />
         )}
       </AnimatePresence>

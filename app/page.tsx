@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <section className="py-36 h-[300vh]">
+      <section className="py-36 h-[300vh] bg-background">
         <div className="container mx-auto px-6">
           <div className="flex flex-col gap-24">
             <span className="text-2xl text-black/60">About Us</span>
