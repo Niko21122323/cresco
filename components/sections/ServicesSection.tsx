@@ -3,7 +3,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
-import "swiper/css";
 import "swiper/css/navigation";
 
 import Image from "next/image";
@@ -120,7 +119,7 @@ const ServicesSection = () => {
           >
             {services.map((service) => (
               <SwiperSlide key={service.id} className="select-none">
-                <div className="relative overflow-hidden rounded-3xl">
+                <div className="relative overflow-hidden rounded-3xl h-full">
                   <Image
                     src={service.image}
                     alt="service image"
