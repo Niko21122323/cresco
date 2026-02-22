@@ -5,6 +5,8 @@ import "./globals.css";
 import "swiper/css";
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/providers/lenis-provider";
 
 const monaSans = Mona_Sans({
   variable: "--font-mona-sans",
@@ -32,8 +34,11 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${monaSans.variable} ${tiktokSans.variable} antialiased`}
       >
-        <Navbar />
-        {children}
+        <SmoothScroll>
+          <Navbar />
+          {children}
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );
