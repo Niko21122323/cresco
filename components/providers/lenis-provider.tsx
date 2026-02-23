@@ -13,17 +13,17 @@ export default function SmoothScroll({
 
   useEffect(() => {
     function update(data: { timestamp: number }) {
+      // Manually trigger Lenis scroll using Framer Motion's frame update
       lenisRef.current?.lenis?.raf(data.timestamp);
     }
 
-    // This hooks Lenis into Framer Motion's render loop
     frame.update(update, true);
 
     return () => cancelFrame(update);
   }, []);
 
   return (
-    <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
+    <ReactLenis root options={{ autoRaf: false, duration: 1.2 }} ref={lenisRef}>
       {children}
     </ReactLenis>
   );

@@ -23,12 +23,13 @@ const Footer = () => {
     offset: ["start end", "end end"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-50%", "0%"]);
 
   return (
     <section ref={containerRef} className="bg-accent overflow-hidden relative">
       <motion.div
         style={{ y }}
+        initial={{ translateZ: 0 }}
         className="container mx-auto px-6 will-change-transform"
       >
         <div className="flex flex-col gap-80">
@@ -53,7 +54,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          <div className="">
+          <div className="pb-6">
             <Image
               src={footerLogo}
               alt="footer logo"

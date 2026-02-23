@@ -16,6 +16,14 @@
   --color-border: var(--border);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+html.lenis {
+  height: auto;
+}
+
 body {
   font-family: var(--font-tiktok-sans);
 }

@@ -3,6 +3,7 @@ import { Mona_Sans, TikTok_Sans } from "next/font/google";
 
 import "./globals.css";
 import "swiper/css";
+import "lenis/dist/lenis.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
