@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import introductionImg1 from "../../public/photos/introduction/introduction-img1.png";
-import introductionImg2 from "../../public/photos/introduction/introduction-img2.png";
-import introductionImg3 from "../../public/photos/introduction/introduction-img3.png";
+import introductionImg1 from "../../public/photos/introduction/introduction-img1.webp";
+import introductionImg2 from "../../public/photos/introduction/introduction-img2.webp";
+import introductionImg3 from "../../public/photos/introduction/introduction-img3.webp";
 
 import iconStar from "../../public/icons/icon-star.svg";
 import iconHeart from "../../public/icons/icon-heart.svg";

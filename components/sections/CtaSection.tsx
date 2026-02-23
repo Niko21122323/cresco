@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ctaImage from "../../public/photos/cta/cta-image.jpg";
+import ctaImage from "../../public/photos/cta/cta-image.webp";
 
 const CtaSection = () => {
   return (

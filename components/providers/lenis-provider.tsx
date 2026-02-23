@@ -13,8 +13,10 @@ export default function SmoothScroll({
 
   useEffect(() => {
     function update(data: { timestamp: number }) {
-      // Manually trigger Lenis scroll using Framer Motion's frame update
-      lenisRef.current?.lenis?.raf(data.timestamp);
+      const lenis = lenisRef.current?.lenis;
+      if (lenis) {
+        lenis.raf(data.timestamp);
+      }
     }
 
     frame.update(update, true);
@@ -23,7 +25,17 @@ export default function SmoothScroll({
   }, []);
 
   return (
-    <ReactLenis root options={{ autoRaf: false, duration: 1.2 }} ref={lenisRef}>
+    <ReactLenis
+      root
+      options={{
+        autoRaf: false,
+        smoothWheel: true,
+        wheelMultiplier: 1.5,
+        touchMultiplier: 1.1,
+        lerp: 0.05,
+      }}
+      ref={lenisRef}
+    >
       {children}
     </ReactLenis>
   );

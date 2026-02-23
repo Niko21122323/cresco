@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import testimonialImg1 from "../../public/photos/testimonials/testimonial-1.jpg";
-import testimonialImg2 from "../../public/photos/testimonials/testimonial-2.jpg";
-import testimonialImg3 from "../../public/photos/testimonials/testimonial-3.jpg";
-import testimonialImg4 from "../../public/photos/testimonials/testimonial-4.jpg";
+import testimonialImg1 from "../../public/photos/testimonials/testimonial-1.webp";
+import testimonialImg2 from "../../public/photos/testimonials/testimonial-2.webp";
+import testimonialImg3 from "../../public/photos/testimonials/testimonial-3.webp";
+import testimonialImg4 from "../../public/photos/testimonials/testimonial-4.webp";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";

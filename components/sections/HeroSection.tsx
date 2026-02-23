@@ -11,7 +11,7 @@ const HeroSection = () => {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 0.3], [1, 1.5]);
   const opacity = useTransform(scrollYProgress, [0, 0.3], [0.5, 0.95]);
-  const y = useTransform(scrollYProgress, [0, 0.5], ["0%", "50%"]);
+  const y = useTransform(scrollYProgress, [0, 0.5], ["0%", "70%"]);
 
   return (
     <div ref={containerRef} className="">

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import aboutImage from "../../public/photos/about/about-image.jpg";
+import aboutImage from "../../public/photos/about/about-image.webp";
 import PrimaryButton from "../buttons/PrimaryButton";
 
 const analytics = [

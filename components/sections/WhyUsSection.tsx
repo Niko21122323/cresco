@@ -4,10 +4,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-import featureImg1 from "../../public/photos/whyUs/feature-1.png";
-import featureImg2 from "../../public/photos/whyUs/feature-2.png";
-import featureImg3 from "../../public/photos/whyUs/feature-3.png";
-import featureImg4 from "../../public/photos/whyUs/feature-4.png";
+import featureImg1 from "../../public/photos/whyUs/feature-1.webp";
+import featureImg2 from "../../public/photos/whyUs/feature-2.webp";
+import featureImg3 from "../../public/photos/whyUs/feature-3.webp";
+import featureImg4 from "../../public/photos/whyUs/feature-4.webp";
 
 import { FiPlus } from "react-icons/fi";
 import { GiConvergenceTarget } from "react-icons/gi";

@@ -7,12 +7,12 @@ import "swiper/css/navigation";
 
 import Image from "next/image";
 
-import serviceImg1 from "../../public/photos/services/service-1.png";
-import serviceImg2 from "../../public/photos/services/service-2.png";
-import serviceImg3 from "../../public/photos/services/service-3.png";
-import serviceImg4 from "../../public/photos/services/service-4.png";
-import serviceImg5 from "../../public/photos/services/service-5.png";
-import serviceImg6 from "../../public/photos/services/service-6.png";
+import serviceImg1 from "../../public/photos/services/service-1.webp";
+import serviceImg2 from "../../public/photos/services/service-2.webp";
+import serviceImg3 from "../../public/photos/services/service-3.webp";
+import serviceImg4 from "../../public/photos/services/service-4.webp";
+import serviceImg5 from "../../public/photos/services/service-5.webp";
+import serviceImg6 from "../../public/photos/services/service-6.webp";
 
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
 
