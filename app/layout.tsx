@@ -8,6 +8,7 @@ import "lenis/dist/lenis.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/providers/lenis-provider";
+import { MotionProvider } from "@/components/providers/motion-provider";
 
 const monaSans = Mona_Sans({
   variable: "--font-mona-sans",
@@ -36,9 +37,11 @@ export default function RootLayout({
         className={`${monaSans.variable} ${tiktokSans.variable} antialiased`}
       >
         <SmoothScroll>
-          <Navbar />
-          {children}
-          <Footer />
+          <MotionProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </MotionProvider>
         </SmoothScroll>
       </body>
     </html>

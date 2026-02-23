@@ -32,7 +32,7 @@ export default function SmoothScroll({
         smoothWheel: true,
         wheelMultiplier: 1.5,
         touchMultiplier: 1.1,
-        lerp: 0.05,
+        lerp: 0.1,
       }}
       ref={lenisRef}
     >

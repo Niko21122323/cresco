@@ -1,6 +1,7 @@
 "use client";
+
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { m, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import heroImage from "../../public/photos/home/hero-image.jpg";
 import heroMiniImage from "../../public/photos/home/hero-mini-image.jpg";
@@ -18,7 +19,7 @@ const HeroSection = () => {
       <section className="relative overflow-hidden">
         <div className="relative container mx-auto px-6 z-20">
           <div className="flex flex-col justify-end">
-            <motion.div
+            <m.div
               style={{ y }}
               className="flex flex-col-reverse lg:flex-col lg:justify-between min-h-screen pb-16 pt-44 lg:pt-64 gap-8 lg:gap-36"
             >
@@ -50,10 +51,10 @@ const HeroSection = () => {
               <h1 className="text-background max-[355px]:text-4xl max-[510px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
                 Train Smarter <br /> with AI Precision
               </h1>
-            </motion.div>
+            </m.div>
           </div>
         </div>
-        <motion.div
+        <m.div
           style={{ scale }}
           className="absolute top-0 left-0 w-full h-full"
         >
@@ -66,8 +67,8 @@ const HeroSection = () => {
             priority
             loading="eager"
           />
-        </motion.div>
-        <motion.div
+        </m.div>
+        <m.div
           style={{ opacity }}
           className="absolute top-0 left-0 w-full h-full bg-black z-10"
         />

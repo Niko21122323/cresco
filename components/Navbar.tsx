@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import PrimaryButton from "./buttons/PrimaryButton";
 
 import { FaInstagram } from "react-icons/fa6";
@@ -72,11 +72,11 @@ const Navbar = () => {
               className="relative z-50 flex flex-col items-center justify-center w-10 h-10 gap-1.5 lg:hidden"
               aria-label="Toggle Menu"
             >
-              <motion.span
+              <m.span
                 animate={isOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
                 className={`w-8 h-0.5 ${isOpen ? "bg-dark" : "bg-background"}`}
               />
-              <motion.span
+              <m.span
                 animate={isOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
                 className={`w-8 h-0.5 ${isOpen ? "bg-dark" : "bg-background"}`}
               />
@@ -87,7 +87,7 @@ const Navbar = () => {
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ y: "-100%" }}
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
@@ -128,13 +128,13 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

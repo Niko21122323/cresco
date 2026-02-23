@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { m, useScroll, useTransform } from "framer-motion";
 import PrimaryButton from "./buttons/PrimaryButton";
 import footerLogo from "../public/photos/footer/footerLogo.svg";
 
@@ -27,7 +27,7 @@ const Footer = () => {
 
   return (
     <section ref={containerRef} className="bg-accent overflow-hidden relative">
-      <motion.div
+      <m.div
         style={{ y }}
         initial={{ translateZ: 0 }}
         className="container mx-auto px-6 will-change-transform"
@@ -64,7 +64,7 @@ const Footer = () => {
             />
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </section>
   );
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import PrimaryButton from "../buttons/PrimaryButton";
 import { FiPlus } from "react-icons/fi";
 
@@ -87,18 +87,18 @@ const FaqsSection = () => {
                         </span>
                       </div>
 
-                      <motion.div
+                      <m.div
                         animate={{ rotate: isOpen ? 135 : 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="flex items-center justify-center"
                       >
                         <FiPlus className="text-dark text-xl" />
-                      </motion.div>
+                      </m.div>
                     </button>
 
                     <AnimatePresence initial={false}>
                       {isOpen && (
-                        <motion.div
+                        <m.div
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
@@ -107,7 +107,7 @@ const FaqsSection = () => {
                           <div className="px-4 sm:px-6 pb-6 pt-4 text-dark/70 text-sm sm:text-lg leading-relaxed">
                             {faq.answer}
                           </div>
-                        </motion.div>
+                        </m.div>
                       )}
                     </AnimatePresence>
                   </div>
