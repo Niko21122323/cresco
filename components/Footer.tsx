@@ -32,10 +32,10 @@ const Footer = () => {
         initial={{ translateZ: 0 }}
         className="container mx-auto px-6 will-change-transform"
       >
-        <div className="flex flex-col gap-80">
-          <div className="flex items-start justify-between gap-24 pt-28">
+        <div className="flex flex-col gap-16 sm:gap-36 lg:gap-64 xl:gap-80">
+          <div className="flex flex-col sm:flex-row items-start justify-between gap-16 sm:gap-24 pt-16 sm:pt-20 lg:pt-28">
             <div>
-              <p className="text-dark text-2xl max-w-[430px] pb-10">
+              <p className="text-dark text-xl lg:text-2xl max-w-[430px] pb-10">
                 Ready to elevate your performance? Your AI coach is always here.
               </p>
               <div className="w-fit">
@@ -47,14 +47,14 @@ const Footer = () => {
                 <Link
                   key={link.id}
                   href={link.link}
-                  className="text-dark text-2xl"
+                  className="text-dark text-lg lg:text-2xl"
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
           </div>
-          <div className="pb-6">
+          <div className="pb-2">
             <Image
               src={footerLogo}
               alt="footer logo"
