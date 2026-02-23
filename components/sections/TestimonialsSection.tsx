@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
+import TitleComponent from "../TitleComponent";
 
 const testimonials = [
   {
@@ -55,18 +56,14 @@ const TestimonialsSection = () => {
     <section className="section-padding-b bg-light">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-12">
-          <div className="xl:col-span-5 flex flex-row items-end justify-between xl:justify-normal xl:flex-col gap-6 xl:gap-24">
-            <div className="flex flex-col items-start gap-6">
-              <span className="text-sm sm:text-base text-dark/60">
-                What Our Users Think
-              </span>
-              <h2 className="text-3xl sm:text-4xl leading-tight max-w-[400px] text-pretty">
-                Trusted by Athletes Worldwide
-              </h2>
-              <p className="text-base sm:text-lg text-dark/60 max-w-2xl xl:max-w-3xl">
-                Real feedback from athletes pushing the limits of human
-                performance, powered by AI.
-              </p>
+          <div className="xl:col-span-5 flex flex-row items-end justify-between xl:justify-normal xl:flex-col ">
+            <div className="title-component-padding-b">
+              <TitleComponent
+                position="start"
+                title="Trusted by Athletes Worldwide"
+                subtitle="What Our Users Think"
+                description="Real feedback from athletes pushing the limits of human performance, powered by AI."
+              />
             </div>
             <div className="flex items-center justify-end gap-2 max-lg:hidden">
               <button

@@ -15,6 +15,7 @@ import serviceImg5 from "../../public/photos/services/service-5.webp";
 import serviceImg6 from "../../public/photos/services/service-6.webp";
 
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
+import TitleComponent from "../TitleComponent";
 
 const services = [
   {
@@ -65,22 +66,13 @@ const ServicesSection = () => {
   return (
     <section className="section-padding-y">
       <div className="container mx-auto px-6 overflow-x-clip">
-        <div className="flex items-end justify-between pb-16 lg:pb-20 xl:pb-28">
-          <div className="flex flex-col items-start gap-6 ">
-            <span className="text-sm sm:text-base text-dark/60">
-              Next-Gen Training
-            </span>
-            <h2 className="text-3xl sm:text-4xl leading-tight max-w-[400px] text-pretty">
-              Your AI coach, always by your side.
-            </h2>
-            <p className="text-base sm:text-lg text-dark/60 max-w-2xl xl:max-w-3xl">
-              Discover how intelligent features analyze every movement, track
-              your performance in real time, and deliver personalized guidance
-              that adapts as you improve. From strength to endurance, each
-              workout becomes smarter, more focused, and built around measurable
-              progress.
-            </p>
-          </div>
+        <div className="flex items-end justify-between title-component-padding-b">
+          <TitleComponent
+            position="start"
+            title="Your AI coach, always by your side."
+            subtitle="Next-Gen Training"
+            description="Discover how intelligent features analyze every movement, track your performance in real time, and deliver personalized guidance that adapts as you improve. From strength to endurance, each workout becomes smarter, more focused, and built around measurable progress."
+          />
 
           <div className="flex items-center gap-2 max-lg:hidden">
             <button

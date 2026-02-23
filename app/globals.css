@@ -26,7 +26,11 @@
 }
 
 @utility section-padding-b {
-  @apply pb-24 lg:pb-36 xl:py-48;
+  @apply pb-24 lg:pb-36 xl:pb-48;
+}
+
+@utility title-component-padding-b {
+  @apply pb-10 md:pb-12 lg:pb-16 xl:pb-24 2xl:pb-28;
 }
 
 html {

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import PrimaryButton from "../buttons/PrimaryButton";
 import { FiPlus } from "react-icons/fi";
+import TitleComponent from "../TitleComponent";
 
 const faqs = [
   {
@@ -50,16 +51,15 @@ const FaqsSection = () => {
   return (
     <section className="bg-background section-padding-y">
       <div className="container mx-auto px-6">
-        <div className="grid col-span-1 lg:grid-cols-12 gap-y-16">
+        <div className="grid col-span-1 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <div className="flex flex-col items-start gap-6 lg:pb-16">
-              <span className="text-sm sm:text-base text-dark/60">FAQ’S</span>
-              <h2 className="text-3xl sm:text-4xl leading-tight max-w-[450px] text-pretty text-dark">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-base sm:text-lg text-dark/60 max-w-[600px]">
-                Everything you need to know about Cresco before getting started.
-              </p>
+            <div className="title-component-padding-b">
+              <TitleComponent
+                position="start"
+                title="Frequently Asked Questions"
+                subtitle="FAQ'S"
+                description="Everything you need to know about Cresco before getting started."
+              />
             </div>
             <div className="w-fit max-lg:hidden">
               <PrimaryButton title="Join the waitlist" url="/" theme="dark" />
@@ -115,7 +115,7 @@ const FaqsSection = () => {
               })}
             </div>
           </div>
-          <div className="w-fit block lg:hidden">
+          <div className="w-fit block pt-10 md:pt-12 lg:pt-16 lg:hidden">
             <PrimaryButton title="Join the waitlist" url="/" theme="dark" />
           </div>
         </div>

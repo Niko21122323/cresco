@@ -5,7 +5,7 @@ const CtaSection = () => {
   return (
     <section className="relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center justify-center py-36 md:py-44 lg:py-52">
+        <div className="flex flex-col items-center justify-center py-36 md:py-44 lg:py-52 xl:py-56 align-self:stretch;">
           <h3 className="text-4xl sm:text-[52px] text-background text-center leading-tight pb-7 max-w-[540px]">
             Take Your Training to the Next Level
           </h3>

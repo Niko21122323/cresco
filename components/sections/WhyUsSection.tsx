@@ -14,6 +14,7 @@ import { GiConvergenceTarget } from "react-icons/gi";
 import { LuBrainCircuit } from "react-icons/lu";
 import { TbHealthRecognition } from "react-icons/tb";
 import { FaRunning } from "react-icons/fa";
+import TitleComponent from "../TitleComponent";
 
 const features = [
   {
@@ -62,17 +63,13 @@ const WhyUsSection = () => {
   return (
     <section className="section-padding-y bg-light">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-start gap-6 pb-16 lg:pb-20 xl:pb-24">
-          <span className="text-sm sm:text-base text-dark/60">
-            Intelligence in Motion
-          </span>
-          <h2 className="text-3xl sm:text-4xl leading-tight max-w-[450px] text-pretty text-dark">
-            Smart Training, with clear and proven results
-          </h2>
-          <p className="text-base sm:text-lg text-dark/60 max-w-[600px]">
-            Our AI isn’t just about tracking, it’s about transforming the way
-            you train, recover and perform
-          </p>
+        <div className="title-component-padding-b">
+          <TitleComponent
+            position="start"
+            title="Smart Training, with clear and proven results"
+            subtitle="Intelligence in Motion"
+            description="Our AI isn’t just about tracking, it’s about transforming the way you train, recover and perform"
+          />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 xl:gap-24 items-stretch">

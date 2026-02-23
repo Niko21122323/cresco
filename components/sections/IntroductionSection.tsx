@@ -8,6 +8,7 @@ import iconStar from "../../public/icons/icon-star.svg";
 import iconHeart from "../../public/icons/icon-heart.svg";
 import iconTrending from "../../public/icons/icon-trending.svg";
 import iconFocus from "../../public/icons/icon-focus.svg";
+import TitleComponent from "../TitleComponent";
 
 const coreFeatures = [
   {
@@ -38,7 +39,7 @@ const coreFeatures = [
     icon: iconFocus,
     image: introductionImg3,
     gridPosition:
-      "lg:col-span-4 xl:col-span-3 lg:row-span-2 lg:col-start-10 xl:col-start-9 lg:row-start-1",
+      "lg:col-span-4 xl:col-span-3 lg:row-span-2 xl:col-start-9 lg:row-start-1",
   },
 ];
 
@@ -46,18 +47,13 @@ const IntroductionSection = () => {
   return (
     <section className="">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center justify-center gap-6 pb-16 lg:pb-20 xl:pb-28">
-          <span className="text-sm sm:text-base text-dark/60">
-            Introduction
-          </span>
-          <h2 className="text-3xl sm:text-4xl text-center leading-tight max-w-[400px] text-pretty">
-            Built for Those Who Want More
-          </h2>
-          <p className="text-base sm:text-lg text-dark/60 text-center max-w-3xl">
-            Whether you train for strength, endurance, or competition, our AI
-            turns data into direction. Precision tracking and live coaching help
-            you push beyond limits — consistently.
-          </p>
+        <div className="title-component-padding-b">
+          <TitleComponent
+            position="center"
+            title="Built for Those Who Want More"
+            subtitle="Introduction"
+            description="Whether you train for strength, endurance, or competition, our AI turns data into direction. Precision tracking and live coaching help you push beyond limits — consistently."
+          />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 xl:grid-cols-11 grid-rows-2 gap-2 sm:gap-4 lg:min-h-[500px] xl:min-h-[670px]">
           {coreFeatures.map((feature) => (
