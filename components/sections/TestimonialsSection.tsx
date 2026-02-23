@@ -55,7 +55,7 @@ const TestimonialsSection = () => {
   return (
     <section className="section-padding-b bg-light">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 xl:grid-cols-12 lg:gap-12">
           <div className="xl:col-span-5 flex flex-row items-end justify-between xl:justify-normal xl:flex-col ">
             <div className="title-component-padding-b">
               <TitleComponent
