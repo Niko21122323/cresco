@@ -31,7 +31,7 @@ const analytics = [
 
 const AboutSection = () => {
   return (
-    <section className="py-36 lg:py-52">
+    <section className="section-padding-y">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-12 lg:gap-20 lg:pb-24">
           <div className="flex flex-col gap-10 lg:gap-16 lg:col-span-7 xl:col-span-6">

@@ -48,7 +48,7 @@ const FaqsSection = () => {
   };
 
   return (
-    <section className="bg-background py-36 lg:py-56">
+    <section className="bg-background section-padding-y">
       <div className="container mx-auto px-6">
         <div className="grid col-span-1 lg:grid-cols-12 gap-y-16">
           <div className="lg:col-span-5">

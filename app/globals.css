@@ -16,6 +16,19 @@
   --color-border: var(--border);
 }
 
+@utility container {
+  padding: 0 24px;
+  margin-inline: auto;
+}
+
+@utility section-padding-y {
+  @apply py-24 lg:py-36 xl:py-48;
+}
+
+@utility section-padding-b {
+  @apply pb-24 lg:pb-36 xl:py-48;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -33,6 +46,14 @@ h6 {
   font-family: var(--font-mona-sans);
 }
 
+.swiper-wrapper {
+  height: auto !important;
+}
+.swiper-slide {
+  height: auto !important;
+  align-self: stretch !important;
+}
+
 .hero-gradient {
   background: #0e0e0f;
   background: linear-gradient(
@@ -40,29 +61,4 @@ h6 {
     rgba(14, 14, 15, 1) 0%,
     rgba(255, 255, 255, 0) 35%
   );
-}
-
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-
-.lenis:not(.lenis-autoToggle).lenis-stopped {
-  overflow: clip;
-}
-
-.lenis [data-lenis-prevent],
-.lenis [data-lenis-prevent-wheel],
-.lenis [data-lenis-prevent-touch] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
-}
-
-.lenis.lenis-autoToggle {
-  transition-property: overflow;
-  transition-duration: 1ms;
-  transition-behavior: allow-discrete;
 }

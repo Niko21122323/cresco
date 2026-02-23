@@ -17,7 +17,7 @@ const HeroSection = () => {
   return (
     <div ref={containerRef} className="">
       <section className="relative overflow-hidden">
-        <div className="relative container mx-auto px-6 z-20">
+        <div className="relative container z-20">
           <div className="flex flex-col justify-end">
             <m.div
               style={{ y }}

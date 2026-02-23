@@ -60,7 +60,7 @@ const WhyUsSection = () => {
   };
 
   return (
-    <section className="py-36 lg:py-56 bg-light">
+    <section className="section-padding-y bg-light">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-start gap-6 pb-16 lg:pb-20 xl:pb-24">
           <span className="text-sm sm:text-base text-dark/60">

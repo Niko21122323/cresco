@@ -63,7 +63,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-36 lg:py-56">
+    <section className="section-padding-y">
       <div className="container mx-auto px-6 overflow-x-clip">
         <div className="flex items-end justify-between pb-16 lg:pb-20 xl:pb-28">
           <div className="flex flex-col items-start gap-6 ">
@@ -101,8 +101,9 @@ const ServicesSection = () => {
             </button>
           </div>
         </div>
-        <div>
+        <div className="">
           <Swiper
+            autoHeight={false}
             modules={[Navigation]}
             navigation={{
               prevEl: "#swiper-prev",
@@ -118,16 +119,19 @@ const ServicesSection = () => {
             spaceBetween={8}
           >
             {services.map((service) => (
-              <SwiperSlide key={service.id} className="select-none">
-                <div className="relative overflow-hidden rounded-3xl h-full">
+              <SwiperSlide
+                key={service.id}
+                className="select-none overflow-hidden rounded-3xl"
+              >
+                <div className="relative overflow-hidden h-full">
                   <Image
                     src={service.image}
                     alt="service image"
                     width={1000}
                     height={1000}
-                    className="w-full h-full object-cover"
+                    className="absolute top-0 left-0 w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 z-10 p-6">
+                  <div className="relative z-10 px-6 pb-6 pt-56">
                     <h4 className="text-background text-xl sm:text-2xl pb-4">
                       {service.title}
                     </h4>

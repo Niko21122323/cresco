@@ -47,7 +47,7 @@ const Footer = () => {
                 <Link
                   key={link.id}
                   href={link.link}
-                  className="text-dark text-lg lg:text-2xl"
+                  className="text-dark text-lg lg:text-xl"
                 >
                   {link.label}
                 </Link>
