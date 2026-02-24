@@ -9,12 +9,13 @@ import featureImg2 from "../../public/photos/whyUs/feature-2.webp";
 import featureImg3 from "../../public/photos/whyUs/feature-3.webp";
 import featureImg4 from "../../public/photos/whyUs/feature-4.webp";
 
-import { FiPlus } from "react-icons/fi";
 import { GiConvergenceTarget } from "react-icons/gi";
 import { LuBrainCircuit } from "react-icons/lu";
 import { TbHealthRecognition } from "react-icons/tb";
 import { FaRunning } from "react-icons/fa";
 import TitleComponent from "../TitleComponent";
+import AccordionComponent from "../AccordionComponent";
+import AccordionImageDisplay from "../AccordionImageDisplay";
 
 const features = [
   {
@@ -52,13 +53,7 @@ const features = [
 ];
 
 const WhyUsSection = () => {
-  const [openId, setOpenId] = useState<number>(1);
-
-  const toggleAccordion = (id: number) => {
-    if (openId !== id) {
-      setOpenId(id);
-    }
-  };
+  const [openId, setOpenId] = useState<number | null>(1);
 
   return (
     <section className="section-padding-y bg-light">
@@ -74,89 +69,25 @@ const WhyUsSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-6 xl:gap-24 items-stretch">
           <div className="flex flex-col gap-2">
-            {features.map((feature) => {
-              const isOpen = openId === feature.id;
-
-              return (
-                <div
-                  key={feature.id}
-                  className="bg-background rounded-xl overflow-hidden"
-                >
-                  <button
-                    type="button"
-                    onClick={() => toggleAccordion(feature.id)}
-                    className="w-full flex items-center justify-between p-4 sm:p-6 text-left cursor-pointer group outline-none gap-6"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center justify-center rounded-sm bg-accent size-8 shrink-0">
-                        <feature.icon className="text-dark" />
-                      </div>
-                      <span className="text-base sm:text-xl font-medium text-dark">
-                        {feature.title}
-                      </span>
-                    </div>
-
-                    <m.div
-                      animate={{ rotate: isOpen ? 135 : 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="flex items-center justify-center"
-                    >
-                      <FiPlus className="text-dark text-xl" />
-                    </m.div>
-                  </button>
-
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <m.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                      >
-                        <div className="px-4 sm:px-6 pb-6 pt-4 text-dark/70 text-sm sm:text-lg leading-relaxed">
-                          {feature.description}
-                        </div>
-                      </m.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
+            {features.map((feature) => (
+              <AccordionComponent
+                key={feature.id}
+                Icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+                isOpen={openId === feature.id}
+                onToggle={() =>
+                  setOpenId(openId === feature.id ? null : feature.id)
+                }
+                backgroundColor="bg-background"
+              />
+            ))}
           </div>
-
-          <div className="relative overflow-hidden rounded-xl w-full h-full max-lg:hidden">
-            <AnimatePresence initial={false}>
-              {features.map((feature) => {
-                const isActive = openId === feature.id;
-                return (
-                  isActive && (
-                    <m.div
-                      key={feature.id}
-                      initial={{ y: "100%" }}
-                      animate={{ y: 0 }}
-                      exit={{
-                        y: 0,
-                        transition: { delay: 0.5 }, // Keep it in DOM longer so new image can cover it
-                      }}
-                      transition={{
-                        duration: 0.6,
-                        ease: [0.16, 1, 0.3, 1],
-                      }}
-                      className="absolute inset-0 w-full h-full z-20"
-                    >
-                      <Image
-                        src={feature.image}
-                        alt={feature.title}
-                        fill
-                        className="object-cover"
-                        priority
-                      />
-                    </m.div>
-                  )
-                );
-              })}
-            </AnimatePresence>
-          </div>
+          <AccordionImageDisplay
+            items={features}
+            activeId={openId}
+            className="max-lg:hidden"
+          />
         </div>
       </div>
     </section>
