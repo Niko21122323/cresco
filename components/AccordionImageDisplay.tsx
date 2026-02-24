@@ -1,25 +1,14 @@
 "use client";
 
+import Image from "next/image";
+import { AccordionImageDisplayTypes } from "@/lib/types/types";
 import { m, AnimatePresence } from "framer-motion";
-import Image, { StaticImageData } from "next/image";
-
-interface ImageItem {
-  id: number | string;
-  image: string | StaticImageData;
-  title: string;
-}
-
-interface AccordionImageDisplayProps {
-  items: ImageItem[];
-  activeId: number | string | null;
-  className?: string;
-}
 
 const AccordionImageDisplay = ({
   items,
   activeId,
   className = "",
-}: AccordionImageDisplayProps) => {
+}: AccordionImageDisplayTypes) => {
   return (
     <div
       className={`relative overflow-hidden rounded-xl w-full h-full ${className}`}

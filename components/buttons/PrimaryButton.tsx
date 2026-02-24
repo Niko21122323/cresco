@@ -1,15 +1,8 @@
+import { PrimaryButtonTypes } from "@/lib/types/types";
 import Link from "next/link";
 import { FiChevronRight } from "react-icons/fi";
 
-const PrimaryButton = ({
-  title,
-  url,
-  theme,
-}: {
-  title: string;
-  url: string;
-  theme: string;
-}) => {
+const PrimaryButton = ({ title, url, theme }: PrimaryButtonTypes) => {
   return (
     <Link
       href={url}

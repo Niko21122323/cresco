@@ -1,17 +1,8 @@
 "use client";
 
-import { ElementType, useState } from "react";
+import { AccordionTypes } from "@/lib/types/types";
 import { m, AnimatePresence } from "framer-motion";
 import { FiPlus } from "react-icons/fi";
-
-interface AccordionProps {
-  title: string;
-  description: string;
-  Icon?: ElementType;
-  backgroundColor?: string;
-  isOpen: boolean;
-  onToggle: () => void;
-}
 
 const AccordionComponent = ({
   title,
@@ -20,7 +11,7 @@ const AccordionComponent = ({
   backgroundColor = "bg-light",
   isOpen,
   onToggle,
-}: AccordionProps) => {
+}: AccordionTypes) => {
   return (
     <div className={`rounded-xl overflow-hidden ${backgroundColor}`}>
       <button

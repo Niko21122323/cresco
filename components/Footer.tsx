@@ -2,18 +2,11 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { m, useScroll, useTransform } from "framer-motion";
 import PrimaryButton from "./buttons/PrimaryButton";
+import Image from "next/image";
 import footerLogo from "../public/photos/footer/footerLogo.svg";
-
-const footerLinks = [
-  { id: 1, label: "Home", link: "/" },
-  { id: 2, label: "About", link: "/" },
-  { id: 3, label: "Features", link: "/" },
-  { id: 4, label: "Testimonials", link: "/" },
-  { id: 5, label: "FAQ'S", link: "/" },
-];
+import { m, useScroll, useTransform } from "framer-motion";
+import { footerLinks } from "@/lib/data/footerLinksData";
 
 const Footer = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -38,7 +31,7 @@ const Footer = () => {
               <p className="text-dark text-xl lg:text-2xl max-w-[430px] pb-10">
                 Ready to elevate your performance? Your AI coach is always here.
               </p>
-              <div className="w-fit">
+              <div className="w-fit rounded-full border border-dark">
                 <PrimaryButton title="Join the waitlist" url="/" theme="dark" />
               </div>
             </div>

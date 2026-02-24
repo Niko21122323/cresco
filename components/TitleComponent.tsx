@@ -1,18 +1,12 @@
 import { GoDotFill } from "react-icons/go";
-
-interface TitleComponentProps {
-  position?: "center" | "start";
-  title: string;
-  subtitle: string;
-  description?: string;
-}
+import { TitleComponentTypes } from "@/lib/types/types";
 
 const TitleComponent = ({
   position = "start",
   title,
   subtitle,
   description,
-}: TitleComponentProps) => {
+}: TitleComponentTypes) => {
   return (
     <div
       className={`flex flex-col ${position === "center" ? "items-center justify-center" : "items-start"} gap-6`}

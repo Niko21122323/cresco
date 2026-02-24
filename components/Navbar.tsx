@@ -2,25 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { m, AnimatePresence } from "framer-motion";
 import PrimaryButton from "./buttons/PrimaryButton";
-
-import { FaInstagram } from "react-icons/fa6";
-import { SiTiktok } from "react-icons/si";
-import { GrLinkedinOption } from "react-icons/gr";
-
-const navLinks = [
-  { id: 1, label: "About", link: "" },
-  { id: 2, label: "Features", link: "" },
-  { id: 3, label: "Testimonials", link: "" },
-  { id: 4, label: "FAQ'S", link: "" },
-];
-
-const socialLinks = [
-  { id: 1, Icon: FaInstagram, url: "https://instagram.com" },
-  { id: 2, Icon: SiTiktok, url: "https://tiktok.com" },
-  { id: 3, Icon: GrLinkedinOption, url: "https://linkedin.com" },
-];
+import { m, AnimatePresence } from "framer-motion";
+import { navLinks } from "@/lib/data/navbarLinksData";
+import { socialLinks } from "@/lib/data/socialsData";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
