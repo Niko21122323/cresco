@@ -9,7 +9,7 @@ const CtaSection = () => {
           <h3 className="text-4xl sm:text-[52px] text-background text-center leading-tight pb-7 max-w-[540px]">
             Take Your Training to the Next Level
           </h3>
-          <p className="text-lg text-white/60 text-center max-w-[680px]">
+          <p className="text-lg text-background/60 text-center max-w-[680px]">
             Unlock intelligent coaching, real-time insights, and adaptive AI
             guidance. Start transforming your workouts today.
           </p>
@@ -20,7 +20,7 @@ const CtaSection = () => {
             <input
               type="email"
               placeholder="johndoe@gmail.com"
-              className="bg-background/15 backdrop-blur-xl p-3 rounded-md text-base placeholder:text-base text-white/80 placeholder:text-white/60 border border-background/30 min-w-[90%] sm:min-w-80"
+              className="bg-background/15 backdrop-blur-xl p-3 rounded-md text-base placeholder:text-base text-background/80 placeholder:text-background/60 border border-background/30 focus:outline-none min-w-[90%] sm:min-w-80"
             />
             <button
               type="submit"
@@ -36,8 +36,8 @@ const CtaSection = () => {
         <Image
           src={ctaImage}
           alt="cta image background"
-          width={3000}
-          height={3000}
+          width={2536}
+          height={2000}
           className="h-full w-full object-cover"
         />
       </div>
