@@ -4,8 +4,9 @@ import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
-import Image from "next/image";
 import TitleComponent from "../TitleComponent";
+import SwiperButton from "../buttons/SwiperButton";
+import ServicesCard from "../ServicesCard";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
 
 import { services } from "@/lib/data/servicesData";
@@ -23,22 +24,12 @@ const ServicesSection = () => {
           />
 
           <div className="flex items-center gap-2 max-lg:hidden">
-            <button
-              type="button"
-              id="swiper-prev"
-              className="relative flex items-center justify-center bg-accent rounded-md size-16 cursor-pointer overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none"
-            >
+            <SwiperButton id="swiper-prev">
               <IoArrowBack className="relative z-10 text-lg text-dark group-hover:text-accent transition-colors duration-300 ease-in-out" />
-              <div className="absolute bottom-0 left-0 w-full h-0 bg-dark group-hover:h-full transition-all duration-300 ease-in-out"></div>
-            </button>
-            <button
-              type="button"
-              id="swiper-next"
-              className="relative flex items-center justify-center bg-accent rounded-md size-16 cursor-pointer overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none"
-            >
+            </SwiperButton>
+            <SwiperButton id="swiper-next">
               <IoArrowForward className="relative z-10 text-lg text-dark group-hover:text-accent transition-colors duration-300 ease-in-out" />
-              <div className="absolute bottom-0 left-0 w-full h-0 bg-dark group-hover:h-full transition-all duration-300 ease-in-out"></div>
-            </button>
+            </SwiperButton>
           </div>
         </div>
         <div className="">
@@ -58,28 +49,16 @@ const ServicesSection = () => {
             slidesPerView={1}
             spaceBetween={8}
           >
-            {services.map((service) => (
+            {services.map(({ id, image, title, description }) => (
               <SwiperSlide
-                key={service.id}
+                key={id}
                 className="select-none overflow-hidden rounded-3xl"
               >
-                <div className="relative overflow-hidden h-full">
-                  <Image
-                    src={service.image}
-                    alt="service image"
-                    width={1000}
-                    height={1000}
-                    className="absolute top-0 left-0 w-full h-full object-cover"
-                  />
-                  <div className="relative z-10 px-6 pb-6 pt-56">
-                    <h4 className="text-background text-xl sm:text-2xl pb-4">
-                      {service.title}
-                    </h4>
-                    <p className="text-background/80 text-sm sm:max-w-[85%]">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
+                <ServicesCard
+                  image={image}
+                  title={title}
+                  description={description}
+                />
               </SwiperSlide>
             ))}
           </Swiper>

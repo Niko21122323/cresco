@@ -25,7 +25,7 @@ const AccordionComponent = ({
               <Icon className="text-dark" />
             </div>
           )}
-          <span className="text-base sm:text-xl font-medium text-dark">
+          <span className="text-base sm:text-xl font-medium text-dark text-left">
             {title}
           </span>
         </div>

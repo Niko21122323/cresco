@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import { ElementType } from "react";
+import { ElementType, ReactNode } from "react";
 
 export interface AnalyticsTypes {
   id: number;
@@ -14,7 +14,7 @@ export interface FaqTypes {
 }
 
 export interface CoreFeaturesTypes {
-  id: number;
+  id?: number;
   content: string;
   icon: StaticImageData;
   image?: StaticImageData;
@@ -22,14 +22,14 @@ export interface CoreFeaturesTypes {
 }
 
 export interface ServicesTypes {
-  id: number;
+  id?: number;
   title: string;
   description: string;
   image: StaticImageData;
 }
 
 export interface TestimonialsTypes {
-  id: number;
+  id?: number;
   title: string;
   message: string;
   name: string;
@@ -94,4 +94,9 @@ export interface PrimaryButtonTypes {
   title: string;
   url: string;
   theme: string;
+}
+
+export interface SwiperButtonTypes {
+  id: string;
+  children: ReactNode;
 }

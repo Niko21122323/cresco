@@ -31,13 +31,13 @@ const FaqsSection = () => {
 
           <div className="lg:col-span-6 xl:col-span-5 lg:col-end-13 xl:col-end-13">
             <div className="flex flex-col gap-2">
-              {faqs.map((faq) => (
+              {faqs.map(({ id, question, answer }) => (
                 <AccordionComponent
-                  key={faq.id}
-                  title={faq.question}
-                  description={faq.answer}
-                  isOpen={openId === faq.id}
-                  onToggle={() => setOpenId(faq.id)}
+                  key={id}
+                  title={question}
+                  description={answer}
+                  isOpen={openId === id}
+                  onToggle={() => setOpenId(id)}
                   backgroundColor="bg-light"
                 />
               ))}

@@ -25,14 +25,14 @@ const WhyUsSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-6 xl:gap-24 items-stretch">
           <div className="flex flex-col gap-2">
-            {features.map((feature) => (
+            {features.map(({ id, icon, title, description }) => (
               <AccordionComponent
-                key={feature.id}
-                Icon={feature.icon}
-                title={feature.title}
-                description={feature.description}
-                isOpen={openId === feature.id}
-                onToggle={() => setOpenId(feature.id)}
+                key={id}
+                Icon={icon}
+                title={title}
+                description={description}
+                isOpen={openId === id}
+                onToggle={() => setOpenId(id)}
                 backgroundColor="bg-background"
               />
             ))}
