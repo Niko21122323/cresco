@@ -1,11 +1,13 @@
 "use client";
 
 import { useRef } from "react";
+
 import { m, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
-import heroImage from "../../public/photos/home/hero-image.jpg";
-import heroMiniImage from "../../public/photos/home/hero-mini-image.jpg";
+
 import PrimaryButton from "../buttons/PrimaryButton";
+import { PiStarFourFill } from "react-icons/pi";
+import Image from "next/image";
+import heroImage from "../../public/photos/home/hero-image.webp";
 
 const HeroSection = () => {
   const containerRef = useRef(null);
@@ -21,26 +23,17 @@ const HeroSection = () => {
           <div className="flex flex-col justify-end">
             <m.div
               style={{ y }}
-              className="flex flex-col-reverse lg:flex-col lg:justify-between min-h-screen pb-16 pt-44 lg:pt-64 gap-8 lg:gap-36"
+              className="flex items-end justify-between min-h-screen pb-16 pt-44 lg:pt-64"
             >
-              <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-24">
-                <p className="text-background/80 text-lg max-w-[460px]">
+              <div className="">
+                <h1 className="text-background max-[355px]:text-4xl max-[510px]:text-5xl text-6xl md:text-7xl xl:text-8xl pb-8">
+                  Train Smarter <br /> with AI Precision
+                </h1>
+                <p className="text-background/80 text-lg max-w-[560px]">
                   AI-driven tracking meets real-time coaching, giving you the
                   clarity and guidance you need to improve every session.
                 </p>
-                <div className="max-w-[225px] max-lg:hidden">
-                  <p className="text-background/80 text-lg pb-6">
-                    Breakthrough growth built on insight.
-                  </p>
-                  <Image
-                    src={heroMiniImage}
-                    alt="hero image"
-                    width={300}
-                    height={300}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-                <div className="block lg:hidden">
+                <div className="w-fit pt-12">
                   <PrimaryButton
                     title="Join the waitlist"
                     url="/"
@@ -48,9 +41,30 @@ const HeroSection = () => {
                   />
                 </div>
               </div>
-              <h1 className="text-background max-[355px]:text-4xl max-[510px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
-                Train Smarter <br /> with AI Precision
-              </h1>
+              <div className="flex flex-col gap-1.5 max-lg:hidden">
+                <div className="grid grid-cols-12 gap-1.5">
+                  <div className="bg-accent rounded-md col-span-9 flex items-center px-4">
+                    <p className="text-xl font-medium text-dark">Fun Facts</p>
+                  </div>
+                  <div className="flex items-center justify-center bg-accent col-span-3 rounded-md p-4">
+                    <PiStarFourFill className="text-base text-dark" />
+                  </div>
+                </div>
+                <div className="bg-background rounded-lg px-4 py-6">
+                  <h6 className="text-2xl text-dark font-medium pb-2">
+                    1,200+
+                  </h6>
+                  <p className="text-dark/80 text-base">
+                    Clients around the world
+                  </p>
+                </div>
+                <div className="bg-background rounded-lg p-3">
+                  <h6 className="text-2xl text-dark font-medium pb-2">95%</h6>
+                  <p className="text-dark/80 text-base">
+                    Client satisfaction rate
+                  </p>
+                </div>
+              </div>
             </m.div>
           </div>
         </div>

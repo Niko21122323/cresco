@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`absolute top-0 left-0 w-full z-50 py-8 border-b border-border/10  transition-colors duration-300 ${isOpen && "bg-background"}`}
+        className={`absolute top-0 left-0 w-full z-50 py-8 border-b border-border/20  transition-colors duration-300 ${isOpen && "bg-background"}`}
       >
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between gap-10">
