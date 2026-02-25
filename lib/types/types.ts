@@ -2,7 +2,7 @@ import { StaticImageData } from "next/image";
 import { ElementType, ReactNode } from "react";
 
 export interface AnalyticsTypes {
-  id: number;
+  id?: number;
   title: string;
   description: string;
 }

@@ -2,8 +2,7 @@ import PrimaryButton from "../buttons/PrimaryButton";
 import Image from "next/image";
 
 import aboutImage from "../../public/photos/about/about-image.webp";
-
-import { analytics } from "@/lib/data/analyticsData";
+import AnalyticsComponent from "../AnalyticsComponent";
 
 const AboutSection = () => {
   return (
@@ -32,18 +31,7 @@ const AboutSection = () => {
       </div>
       <div className="py-24 lg:pt-24 lg:border-t lg:border-border">
         <div className="container mx-auto px-6">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 xl:gap-20">
-            {analytics.map((analytic) => (
-              <div key={analytic.id} className="flex flex-col gap-4">
-                <h3 className="text-dark text-4xl md:text-[42px]">
-                  {analytic.title}
-                </h3>
-                <span className="text-dark/60 text-sm">
-                  {analytic.description}
-                </span>
-              </div>
-            ))}
-          </div>
+          <AnalyticsComponent />
         </div>
       </div>
       <div className="aspect-square sm:aspect-video block lg:hidden">
