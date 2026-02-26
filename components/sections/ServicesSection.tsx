@@ -14,7 +14,7 @@ import ScrollReveal from "../animations/ScrollReveal";
 
 const ServicesSection = () => {
   return (
-    <section className="section-padding-y">
+    <section className="section-padding-y" id="services">
       <div className="container mx-auto px-6 overflow-x-clip">
         <div className="flex items-end justify-between title-component-padding-b">
           <TitleComponent

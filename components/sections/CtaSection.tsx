@@ -4,7 +4,7 @@ import ScrollReveal from "../animations/ScrollReveal";
 
 const CtaSection = () => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden" id="cta">
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center justify-center py-36 md:py-44 lg:py-52 xl:py-56 align-self:stretch;">
           <ScrollReveal>

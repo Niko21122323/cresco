@@ -13,7 +13,7 @@ const WhyUsSection = () => {
   const [openId, setOpenId] = useState<number | null>(1);
 
   return (
-    <section className="section-padding-y bg-light">
+    <section className="section-padding-y bg-light" id="why-us">
       <div className="container mx-auto px-6">
         <div className="title-component-padding-b">
           <TitleComponent

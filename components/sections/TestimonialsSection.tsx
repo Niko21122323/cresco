@@ -13,7 +13,7 @@ import ScrollReveal from "../animations/ScrollReveal";
 
 const TestimonialsSection = () => {
   return (
-    <section className="section-padding-b bg-light">
+    <section className="section-padding-b bg-light" id="testimonials">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 xl:grid-cols-12 lg:gap-12">
           <div className="xl:col-span-5 flex flex-row items-end justify-between xl:justify-normal xl:flex-col ">

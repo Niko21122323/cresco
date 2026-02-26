@@ -7,7 +7,7 @@ import ScrollReveal from "../animations/ScrollReveal";
 
 const AboutSection = () => {
   return (
-    <section className="section-padding-y">
+    <section className="section-padding-y" id="about">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-12 lg:gap-20 lg:pb-24">
           <div className="flex flex-col gap-10 lg:gap-16 lg:col-span-7 xl:col-span-6">
@@ -19,7 +19,11 @@ const AboutSection = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <div className="w-fit">
-                <PrimaryButton title="Join the waitlist" url="/" theme="dark" />
+                <PrimaryButton
+                  title="Join the waitlist"
+                  url="#cta"
+                  theme="dark"
+                />
               </div>
             </ScrollReveal>
           </div>

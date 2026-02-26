@@ -5,7 +5,7 @@ import { coreFeatures } from "@/lib/data/coreFeaturesData";
 
 const IntroductionSection = () => {
   return (
-    <section className="">
+    <section className="" id="introduction">
       <div className="container mx-auto px-6">
         <div className="title-component-padding-b">
           <TitleComponent

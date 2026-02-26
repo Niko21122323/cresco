@@ -13,7 +13,7 @@ const FaqsSection = () => {
   const [openId, setOpenId] = useState<number | null>(1);
 
   return (
-    <section className="bg-background section-padding-y">
+    <section className="bg-background section-padding-y" id="faqs">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12">
           <div className="lg:col-span-5">
@@ -26,7 +26,11 @@ const FaqsSection = () => {
               />
             </div>
             <div className="w-fit max-lg:hidden">
-              <PrimaryButton title="Join the waitlist" url="/" theme="dark" />
+              <PrimaryButton
+                title="Join the waitlist"
+                url="#cta"
+                theme="dark"
+              />
             </div>
           </div>
 

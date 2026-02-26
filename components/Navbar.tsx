@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useLenis } from "lenis/react";
 import PrimaryButton from "./buttons/PrimaryButton";
 import { m, AnimatePresence } from "framer-motion";
 import { navLinks } from "@/lib/data/navbarLinksData";
@@ -10,6 +11,22 @@ import FlipWrapper from "./animations/FlipWrapper";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const lenis = useLenis();
+
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    href: string,
+  ) => {
+    e.preventDefault();
+
+    setIsOpen(false);
+
+    lenis?.scrollTo(href, {
+      offset: -100,
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -25,24 +42,29 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`absolute top-0 left-0 w-full z-50 py-8 border-b border-border/20  transition-colors duration-300 ${isOpen && "bg-background"}`}
+        className={`absolute top-0 left-0 w-full z-50 py-8 border-b border-border/20 transition-colors duration-300 ${
+          isOpen && "bg-background"
+        }`}
       >
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between gap-10">
             <div className="flex items-center">
               <h5
-                className={`text-2xl uppercase font-bold lg:pr-8 xl:pr-12 transition-colors duration-300 text-background ${isOpen ? "text-dark" : "text-background"}`}
+                className={`text-2xl uppercase font-bold lg:pr-6 2xl:pr-12 transition-colors duration-300 ${
+                  isOpen ? "text-dark" : "text-background"
+                }`}
               >
                 Cresco
               </h5>
               <div
-                className={`flex items-center gap-8 xl:gap-12 lg:pl-8 xl:pl-12 border-l transition-colors duration-300 max-lg:hidden border-background`}
+                className={`flex items-center gap-8 2xl:gap-12 lg:pl-6 2xl:pl-12 border-l transition-colors duration-300 max-lg:hidden border-background`}
               >
                 {navLinks.map((link) => (
                   <Link
                     key={link.id}
                     href={link.link}
-                    className={`text-lg leading-none transition-colors duration-300 text-background/90`}
+                    onClick={(e) => handleScroll(e, link.link)}
+                    className={`text-base 2xl:text-lg leading-none transition-colors duration-300 text-background/90`}
                   >
                     <FlipWrapper>{link.label}</FlipWrapper>
                   </Link>
@@ -50,7 +72,11 @@ const Navbar = () => {
               </div>
             </div>
             <div className="hidden lg:block">
-              <PrimaryButton title="Join the waitlist" url="/" theme="light" />
+              <PrimaryButton
+                title="Join the waitlist"
+                url="#cta"
+                theme="light"
+              />
             </div>
             <button
               type="button"
@@ -87,7 +113,7 @@ const Navbar = () => {
                     <Link
                       key={link.id}
                       href={link.link}
-                      onClick={() => setIsOpen(false)}
+                      onClick={(e) => handleScroll(e, link.link)}
                       className="text-2xl text-dark transition-colors max-[500px]:border-b border-border/50 max-[500px]:pb-6 last:border-none"
                     >
                       {link.label}
@@ -108,7 +134,7 @@ const Navbar = () => {
                   </div>
                   <PrimaryButton
                     title="Join the waitlist"
-                    url="/"
+                    url="#cta"
                     theme="dark"
                   />
                 </div>

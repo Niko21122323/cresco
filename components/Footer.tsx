@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import { useLenis } from "lenis/react";
 import PrimaryButton from "./buttons/PrimaryButton";
 import Image from "next/image";
 import footerLogo from "../public/photos/footer/footerLogo.svg";
@@ -11,6 +12,7 @@ import FlipWrapper from "./animations/FlipWrapper";
 
 const Footer = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const lenis = useLenis();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -18,6 +20,18 @@ const Footer = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["-50%", "0%"]);
+
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    href: string,
+  ) => {
+    e.preventDefault();
+    lenis?.scrollTo(href, {
+      offset: -100,
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+  };
 
   return (
     <section ref={containerRef} className="bg-accent overflow-hidden relative">
@@ -33,7 +47,11 @@ const Footer = () => {
                 Ready to elevate your performance? Your AI coach is always here.
               </p>
               <div className="w-fit rounded-full border border-dark">
-                <PrimaryButton title="Join the waitlist" url="/" theme="dark" />
+                <PrimaryButton
+                  title="Join the waitlist"
+                  url="#cta"
+                  theme="dark"
+                />
               </div>
             </div>
             <div className="flex flex-col gap-3">
@@ -41,6 +59,7 @@ const Footer = () => {
                 <Link
                   key={link.id}
                   href={link.link}
+                  onClick={(e) => handleScroll(e, link.link)}
                   className="text-dark text-lg lg:text-xl"
                 >
                   <FlipWrapper>{link.label}</FlipWrapper>
