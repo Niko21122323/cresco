@@ -18,10 +18,10 @@ const CtaSection = () => {
               guidance. Start transforming your workouts today.
             </p>
           </ScrollReveal>
-          <ScrollReveal delay={0.4}>
+          <ScrollReveal delay={0.4} extraClass="w-full">
             <form
               action=""
-              className="flex flex-col sm:flex-row items-center gap-2.5 mt-16 max-sm:w-full"
+              className="flex flex-col sm:flex-row items-center gap-2.5 mt-16 max-sm:w-full justify-self-center"
             >
               <input
                 type="email"

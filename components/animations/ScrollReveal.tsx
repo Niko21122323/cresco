@@ -1,15 +1,8 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import React from "react";
 import { m } from "framer-motion";
-
-interface ScrollRevealProps {
-  children: ReactNode;
-  delay?: number;
-  duration?: number;
-  yOffset?: number;
-  stagger?: number;
-}
+import { ScrollRevealProps } from "@/lib/types/types";
 
 const ScrollReveal = ({
   children,
@@ -17,6 +10,7 @@ const ScrollReveal = ({
   duration = 0.8,
   yOffset = 50,
   stagger = 0.1,
+  extraClass,
 }: ScrollRevealProps) => {
   return (
     <>
@@ -30,7 +24,7 @@ const ScrollReveal = ({
             delay: index * stagger + delay,
             ease: [0.25, 0.1, 0.25, 1.0],
           }}
-          className="h-full"
+          className={`h-full ${extraClass}`}
         >
           {child}
         </m.div>

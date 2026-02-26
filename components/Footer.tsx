@@ -7,6 +7,7 @@ import Image from "next/image";
 import footerLogo from "../public/photos/footer/footerLogo.svg";
 import { m, useScroll, useTransform } from "framer-motion";
 import { footerLinks } from "@/lib/data/footerLinksData";
+import FlipWrapper from "./animations/FlipWrapper";
 
 const Footer = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,7 +43,7 @@ const Footer = () => {
                   href={link.link}
                   className="text-dark text-lg lg:text-xl"
                 >
-                  {link.label}
+                  <FlipWrapper>{link.label}</FlipWrapper>
                 </Link>
               ))}
             </div>

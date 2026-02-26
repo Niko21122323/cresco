@@ -103,3 +103,12 @@ export interface SwiperButtonTypes {
   id: string;
   children: ReactNode;
 }
+
+export interface ScrollRevealProps {
+  children: ReactNode;
+  delay?: number;
+  duration?: number;
+  yOffset?: number;
+  stagger?: number;
+  extraClass?: string;
+}

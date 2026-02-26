@@ -6,6 +6,7 @@ import PrimaryButton from "./buttons/PrimaryButton";
 import { m, AnimatePresence } from "framer-motion";
 import { navLinks } from "@/lib/data/navbarLinksData";
 import { socialLinks } from "@/lib/data/socialsData";
+import FlipWrapper from "./animations/FlipWrapper";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,9 +42,9 @@ const Navbar = () => {
                   <Link
                     key={link.id}
                     href={link.link}
-                    className={`text-lg leading-none transition-colors duration-300 text-background/80`}
+                    className={`text-lg leading-none transition-colors duration-300 text-background/90`}
                   >
-                    {link.label}
+                    <FlipWrapper>{link.label}</FlipWrapper>
                   </Link>
                 ))}
               </div>
