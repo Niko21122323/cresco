@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import { m, useInView, useMotionValue, animate } from "framer-motion";
 import { analytics } from "@/lib/data/analyticsData";
+import ScrollReveal from "./animations/ScrollReveal";
 
 const CountUp = ({ value, start }: { value: string; start: boolean }) => {
   const ref = useRef<HTMLSpanElement>(null);
@@ -26,7 +27,11 @@ const CountUp = ({ value, start }: { value: string; start: boolean }) => {
     }
   }, [start, target, count, suffix]);
 
-  return <m.span ref={ref}>0{suffix}</m.span>;
+  return (
+    <ScrollReveal>
+      <m.span ref={ref}>0{suffix}</m.span>
+    </ScrollReveal>
+  );
 };
 
 const AnalyticsComponent = () => {
@@ -43,7 +48,9 @@ const AnalyticsComponent = () => {
           <h3 className="text-dark text-4xl md:text-[42px]">
             <CountUp value={title} start={isInView} />
           </h3>
-          <span className="text-dark/60 text-sm">{description}</span>
+          <ScrollReveal delay={0.3}>
+            <span className="text-dark/60 text-sm">{description}</span>
+          </ScrollReveal>
         </div>
       ))}
     </div>

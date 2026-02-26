@@ -11,6 +11,7 @@ export interface FaqTypes {
   id: number;
   question: string;
   answer: string;
+  delay?: number;
 }
 
 export interface CoreFeaturesTypes {
@@ -19,6 +20,7 @@ export interface CoreFeaturesTypes {
   icon: StaticImageData;
   image?: StaticImageData;
   gridPosition: string;
+  delay?: number;
 }
 
 export interface ServicesTypes {
@@ -43,6 +45,7 @@ export interface FeaturesTypes {
   description: string;
   icon: ElementType;
   image: StaticImageData;
+  delay?: number;
 }
 
 export interface AccordionTypes {

@@ -7,6 +7,7 @@ import AccordionComponent from "../AccordionComponent";
 import AccordionImageDisplay from "../AccordionImageDisplay";
 
 import { features } from "@/lib/data/featuresData";
+import ScrollReveal from "../animations/ScrollReveal";
 
 const WhyUsSection = () => {
   const [openId, setOpenId] = useState<number | null>(1);
@@ -25,23 +26,26 @@ const WhyUsSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-6 xl:gap-24 items-stretch">
           <div className="flex flex-col gap-2">
-            {features.map(({ id, icon, title, description }) => (
-              <AccordionComponent
-                key={id}
-                Icon={icon}
-                title={title}
-                description={description}
-                isOpen={openId === id}
-                onToggle={() => setOpenId(id)}
-                backgroundColor="bg-background"
-              />
+            {features.map(({ id, icon, title, description, delay }) => (
+              <ScrollReveal key={id} delay={delay}>
+                <AccordionComponent
+                  Icon={icon}
+                  title={title}
+                  description={description}
+                  isOpen={openId === id}
+                  onToggle={() => setOpenId(id)}
+                  backgroundColor="bg-background"
+                />
+              </ScrollReveal>
             ))}
           </div>
-          <AccordionImageDisplay
-            items={features}
-            activeId={openId}
-            className="max-lg:hidden"
-          />
+          <ScrollReveal>
+            <AccordionImageDisplay
+              items={features}
+              activeId={openId}
+              className="max-lg:hidden"
+            />
+          </ScrollReveal>
         </div>
       </div>
     </section>

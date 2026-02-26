@@ -7,6 +7,7 @@ import TitleComponent from "../TitleComponent";
 import AccordionComponent from "../AccordionComponent";
 
 import { faqs } from "@/lib/data/faqData";
+import ScrollReveal from "../animations/ScrollReveal";
 
 const FaqsSection = () => {
   const [openId, setOpenId] = useState<number | null>(1);
@@ -31,15 +32,16 @@ const FaqsSection = () => {
 
           <div className="lg:col-span-6 xl:col-span-5 lg:col-end-13 xl:col-end-13">
             <div className="flex flex-col gap-2">
-              {faqs.map(({ id, question, answer }) => (
-                <AccordionComponent
-                  key={id}
-                  title={question}
-                  description={answer}
-                  isOpen={openId === id}
-                  onToggle={() => setOpenId(id)}
-                  backgroundColor="bg-light"
-                />
+              {faqs.map(({ id, question, answer, delay }) => (
+                <ScrollReveal key={id} delay={delay}>
+                  <AccordionComponent
+                    title={question}
+                    description={answer}
+                    isOpen={openId === id}
+                    onToggle={() => setOpenId(id)}
+                    backgroundColor="bg-light"
+                  />
+                </ScrollReveal>
               ))}
             </div>
           </div>

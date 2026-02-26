@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ServicesCard = ({ image, title, description }: ServicesTypes) => {
   return (
-    <div className="relative overflow-hidden h-full">
+    <div className="relative overflow-hidden h-full rounded-3xl">
       <Image
         src={image}
         alt="service image"

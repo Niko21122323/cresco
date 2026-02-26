@@ -16,6 +16,7 @@ export const coreFeatures: CoreFeaturesTypes[] = [
     icon: iconStar,
     image: introductionImg1,
     gridPosition: "lg:col-span-4 xl:col-span-5 lg:row-span-2",
+    delay: 0,
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ export const coreFeatures: CoreFeaturesTypes[] = [
     image: introductionImg2,
     gridPosition:
       "lg:col-span-4 xl:col-span-3 lg:col-start-5 xl:col-start-6 lg:row-start-1",
+    delay: 0.2,
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ export const coreFeatures: CoreFeaturesTypes[] = [
     icon: iconTrending,
     gridPosition:
       "lg:col-span-4 xl:col-span-3 lg:col-start-5 xl:col-start-6 lg:row-start-2",
+    delay: 0,
   },
   {
     id: 4,
@@ -39,5 +42,6 @@ export const coreFeatures: CoreFeaturesTypes[] = [
     image: introductionImg3,
     gridPosition:
       "lg:col-span-4 xl:col-span-3 lg:row-span-2 xl:col-start-9 lg:row-start-1",
+    delay: 0.4,
   },
 ];

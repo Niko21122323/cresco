@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
 import { testimonials } from "@/lib/data/testimonialsData";
+import ScrollReveal from "../animations/ScrollReveal";
 
 const TestimonialsSection = () => {
   return (
@@ -25,45 +26,51 @@ const TestimonialsSection = () => {
               />
             </div>
             <div className="flex items-center justify-end gap-2 max-lg:hidden">
-              <SwiperButton id="testimonail-prev">
-                <IoArrowBack className="relative z-10 text-lg text-dark group-hover:text-accent transition-colors duration-300 ease-in-out" />
-              </SwiperButton>
-              <SwiperButton id="testimonial-next">
-                <IoArrowForward className="relative z-10 text-lg text-dark group-hover:text-accent transition-colors duration-300 ease-in-out" />
-              </SwiperButton>
+              <ScrollReveal>
+                <SwiperButton id="testimonail-prev">
+                  <IoArrowBack className="relative z-10 text-lg text-dark group-hover:text-accent transition-colors duration-300 ease-in-out" />
+                </SwiperButton>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <SwiperButton id="testimonial-next">
+                  <IoArrowForward className="relative z-10 text-lg text-dark group-hover:text-accent transition-colors duration-300 ease-in-out" />
+                </SwiperButton>
+              </ScrollReveal>
             </div>
           </div>
           <div className="xl:col-span-7 2xl:col-span-6 2xl:col-end-13">
-            <div>
-              <Swiper
-                modules={[Navigation]}
-                slidesPerView={1}
-                spaceBetween={8}
-                navigation={{
-                  prevEl: "#testimonail-prev",
-                  nextEl: "#testimonial-next",
-                }}
-                breakpoints={{
-                  640: { slidesPerView: 1.3 },
-                  768: { slidesPerView: 1.5 },
-                  1280: { slidesPerView: 1 },
-                }}
-              >
-                {testimonials.map(
-                  ({ id, image, title, message, name, occupation }) => (
-                    <SwiperSlide key={id} className="h-auto! select-none">
-                      <TestimonialCard
-                        image={image}
-                        title={title}
-                        message={message}
-                        name={name}
-                        occupation={occupation}
-                      />
-                    </SwiperSlide>
-                  ),
-                )}
-              </Swiper>
-            </div>
+            <ScrollReveal>
+              <div>
+                <Swiper
+                  modules={[Navigation]}
+                  slidesPerView={1}
+                  spaceBetween={8}
+                  navigation={{
+                    prevEl: "#testimonail-prev",
+                    nextEl: "#testimonial-next",
+                  }}
+                  breakpoints={{
+                    640: { slidesPerView: 1.3 },
+                    768: { slidesPerView: 1.5 },
+                    1280: { slidesPerView: 1 },
+                  }}
+                >
+                  {testimonials.map(
+                    ({ id, image, title, message, name, occupation }) => (
+                      <SwiperSlide key={id} className="h-auto! select-none">
+                        <TestimonialCard
+                          image={image}
+                          title={title}
+                          message={message}
+                          name={name}
+                          occupation={occupation}
+                        />
+                      </SwiperSlide>
+                    ),
+                  )}
+                </Swiper>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>

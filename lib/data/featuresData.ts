@@ -18,6 +18,7 @@ export const features: FeaturesTypes[] = [
       "Built on advanced tracking technology, delivering consistent and reliable performance data every session.",
     icon: GiConvergenceTarget,
     image: featureImg1,
+    delay: 0,
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ export const features: FeaturesTypes[] = [
       "Our AI analyzes, adapts, and evolves with you to provide smarter coaching over time.",
     icon: LuBrainCircuit,
     image: featureImg2,
+    delay: 0.2,
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ export const features: FeaturesTypes[] = [
       "Monitor fatigue, balance intensity, and train at the right pace to maximize results and prevent burnout.",
     icon: TbHealthRecognition,
     image: featureImg3,
+    delay: 0.4,
   },
   {
     id: 4,
@@ -42,5 +45,6 @@ export const features: FeaturesTypes[] = [
       "Connect, compete, and grow within a community driven by progress and performance.",
     icon: FaRunning,
     image: featureImg4,
+    delay: 0.6,
   },
 ];
