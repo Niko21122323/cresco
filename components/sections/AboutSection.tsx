@@ -32,9 +32,9 @@ const AboutSection = () => {
               <Image
                 src={aboutImage}
                 alt="about image"
-                width={1000}
-                height={800}
                 className="aspect-video object-cover w-full h-full rounded-3xl"
+                loading="lazy"
+                placeholder="blur"
               />
             </ScrollReveal>
           </div>

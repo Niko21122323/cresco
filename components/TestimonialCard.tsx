@@ -14,9 +14,10 @@ const TestimonialCard = ({
         <Image
           src={image}
           alt="testimonial image"
-          width={500}
-          height={1000}
           className="absolute top-0 left-0 w-full h-full object-cover"
+          loading="lazy"
+          placeholder="blur"
+          quality={50}
         />
       </div>
       <div className="lg:col-span-6 flex flex-col justify-between">

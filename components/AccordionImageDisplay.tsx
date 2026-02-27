@@ -38,7 +38,9 @@ const AccordionImageDisplay = ({
                   alt={item.title}
                   fill
                   className="object-cover"
-                  priority
+                  loading="lazy"
+                  placeholder="blur"
+                  quality={50}
                 />
               </m.div>
             )

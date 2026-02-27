@@ -7,9 +7,10 @@ const ServicesCard = ({ image, title, description }: ServicesTypes) => {
       <Image
         src={image}
         alt="service image"
-        width={1000}
-        height={1000}
         className="absolute top-0 left-0 w-full h-full object-cover"
+        loading="lazy"
+        placeholder="blur"
+        quality={50}
       />
       <div className="relative z-10 px-6 pb-6 pt-56">
         <h4 className="text-background text-xl sm:text-2xl pb-4">{title}</h4>

@@ -30,9 +30,9 @@ const FeatureCard = ({
             <Image
               src={image}
               alt="feature image"
-              width={1000}
-              height={1000}
               className="absolute top-0 left-0 h-full w-full object-cover"
+              loading="lazy"
+              placeholder="blur"
             />
           )}
         </div>

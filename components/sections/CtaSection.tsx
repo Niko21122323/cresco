@@ -43,9 +43,9 @@ const CtaSection = () => {
         <Image
           src={ctaImage}
           alt="cta image background"
-          width={2536}
-          height={2000}
           className="h-full w-full object-cover"
+          loading="lazy"
+          placeholder="blur"
         />
       </div>
     </section>
