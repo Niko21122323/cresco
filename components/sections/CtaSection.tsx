@@ -30,7 +30,7 @@ const CtaSection = () => {
               />
               <button
                 type="submit"
-                className="bg-background px-7 py-3 text-dark rounded-md cursor-pointer max-sm:min-w-[90%]"
+                className="bg-background px-7 py-3 text-dark rounded-md cursor-pointer max-sm:min-w-[90%] border border-background hover:bg-background/10 hover:backdrop-blur-xl hover:text-background transition-all duration-300 ease-in-out"
               >
                 Join the waitlist
               </button>
